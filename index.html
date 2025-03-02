@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOLVIENTE</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<div class="hero">
+  <h1>SOLVIENTE</h1>
+  <p>Phonk Music Producer</p>
+  <button id="playButton">Listen Now</button>
+</div>
+
+<div id="trackList">
+  <div class="track">
+    <button class="play-btn">▶️</button>
+    <span>Funk da Seducao</span>
+    <span>3:20</span>
+  </div>
+</div>
+
+<script>
+  const audio = new Audio("song.mp3");
+  const playButton = document.getElementById("playButton");
+  const playBtns = document.querySelectorAll(".play-btn");
+
+  playButton.onclick = () => {
+    audio.play();
+    console.log("Playing...");
+  };
+
+  playBtns.forEach((btn) => {
+    btn.onclick = () => {
+      audio.play();
+    };
+  });
+</script>
+</body>
+</html>
